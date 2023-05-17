@@ -13,5 +13,8 @@ export const useTicketStore = defineStore("ticket", () => {
   ]);
 
   const list2 = ref([]);
-  return { list1, list2 };
+  const list3 = ref([]);
+  const list4 = ref([]);
+  const list5 = ref([]);
+  return { list1, list2, list2, list3, list4, list5 };
 });

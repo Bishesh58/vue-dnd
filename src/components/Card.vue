@@ -19,8 +19,10 @@ const store = useTicketStore();
       @change="log"
       itemKey="name"
     >
-      <template #item="{ element, index }">
-        <div class="list-group-item">{{ element.name }} {{ index }}</div>
+      <template #item="{ element }">
+        <div class="list-group-item">
+          {{ element.name }}
+        </div>
       </template>
     </draggable>
 
@@ -32,8 +34,8 @@ const store = useTicketStore();
       @change="log"
       itemKey="name"
     >
-      <template #item="{ element, index }">
-        <div class="list-group-item">{{ element.name }} {{ index }}</div>
+      <template #item="{ element }">
+        <div class="list-group-item">{{ element.name }}</div>
       </template>
     </draggable>
   </div>
