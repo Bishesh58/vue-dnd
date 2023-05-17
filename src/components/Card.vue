@@ -1,28 +1,20 @@
 <script setup>
+import { useTicketStore } from "../stores/ticketStore";
 import { ref } from "vue";
 import draggable from "vuedraggable";
-const list1 = ref([
-  { name: "John", id: 1 },
-  { name: "Joao", id: 2 },
-  { name: "Jean", id: 3 },
-  { name: "Gerard", id: 4 },
-  { name: "Juan", id: 5 },
-  { name: "Edgard", id: 6 },
-  { name: "Johnson", id: 7 },
-]);
-
-const list2 = ref([]);
 
 const log = (ev) => {
   console.log(ev);
 };
+
+const store = useTicketStore();
 </script>
 
 <template>
   <div class="m-10 p-10 border rounded-md flex">
     <draggable
       class="list-group"
-      :list="list1"
+      :list="store.list1"
       group="ticket"
       @change="log"
       itemKey="name"
@@ -35,7 +27,7 @@ const log = (ev) => {
     <hr />
     <draggable
       class="list-group"
-      :list="list2"
+      :list="store.list2"
       group="ticket"
       @change="log"
       itemKey="name"
